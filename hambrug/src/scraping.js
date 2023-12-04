@@ -36,16 +36,22 @@ async function runScraping(pBlNo){
 
 async function lanchBrower() {
     let lanchParam = {};
-    lanchParam.headless = "new";
+    lanchParam.headless = true;
 
     // To check runtime environment whether local or image
     const isNotLocal = fs.existsSync("/usr/bin/google-chrome-stable");
     if(isNotLocal){
         lanchParam.executablePath = "/usr/bin/google-chrome-stable";
-        lanchParam.args = ["--no-sandbox", "--disabled-setupid-sandbox"];
+        lanchParam.args = [ 
+            "--no-sandbox",
+            "--disable-setuid-sandbox",
+            "--disable-dev-shm-usage",
+            "--disable-accelerated-2d-canvas",
+            "--no-first-run",
+            "--no-zygote",
+            "--disable-gpu"
+        ];
     }
-
-    
 
     const browser = await puppeteer.launch(lanchParam);
 
