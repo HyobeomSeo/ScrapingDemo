@@ -79,5 +79,5 @@ Target URL : https://www.hamburgsud.com/tracking/
     
    3. Docker run by local API
         ```
-        docker run -p 3000:3000 -d cello-scraping-hambrug:0.2
+        docker run -p 3000:3000 -d cello-scraping-hambrug:{version_tag}
         ```
