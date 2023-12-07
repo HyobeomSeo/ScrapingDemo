@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  haproxy:
+    image: cello-scrapping-haproxy:0.1
+    ports:
+      - "80:80"
+
+  api1:
+    image: cello-scraping-hambrug:0.2
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+
+  api2:
+    image: cello-scraping-hambrug:0.2
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+
+  api3:
+    image: cello-scraping-hambrug:0.2
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+
+  api4:
+    image: cello-scraping-hambrug:0.2
+    environment:
+      NODE_ENV: production
+      PORT: 3000
