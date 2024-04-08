@@ -46,16 +46,17 @@ https://eservice.rclgroup.com/CargoTracking/cargoApi/cargoTracking
 {"blNo":"LCHCW23032882","token":"41424443363831382d31373132353431303332383933","turnstile":"0.jM_Empqrh_v39v3Q-IwEJjEeQXVGcwxYFmk-HjlvxbOqtbRK4mG2XLNR0_YVkuM69jdowdnDrjauurp7GE2ESQ4UrBsZo39Azlk_UBhvOr6xVjQqj8hhkpUTJzQZianNpDAOH_405ph7HsxJrBJOi1SfXs0CliRiO0IjU91Gd_1lHTSu5alBTE3WeeIgjIdZdTxfpDygrbAAu_RWiH_DA8DzgUklJ36FzT5CVKrIWD41zlFCaIOpg9BMi4_Fgung-HyG6u4VwNg2Fhl_4kHQCW7vyXq_YnWqsbWPjmWx_7m8A3safPnWr3LpA-FjcgZsmOkHcrY1oVxTYLKuWjUjIIZcjKpbE1QidvtR1D7EcfQIrToiMnk1YVJEpgmTqbIdjGiOZgEkKwpD6334xH1NBwpC-y_O5xH8ty5On9f_571b07Pw58XacU3zShTlPxfT.yNFskUhIfgldReLlZQ0d2Q.b39c0e310497baa70d3322fc319ad09f2add4fa975a99b133ca464cbb65a885d"}
  */
 
-    const response = await axios({
-        method: 'post',
-        url: 'https://eservice.rclgroup.com/CargoTracking/cargoApi/cargoTracking',
+    const axiosConfig ={
         headers: {'Content-Type': 'application/json', 
                   'Sec-Ch-Ua': '"Google Chrome";v="123", "Not:A-Brand";v="8", "Chromium";v="123"',
                   'Sec-Ch-Ua-Platform': '"Windows"',
                   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36'
-                },
-        data: param
-    });
+                }
+    };
+
+    const axiosInstance = axios.create(axiosConfig);
+
+    const response = await axiosInstance.post('https://eservice.rclgroup.com/CargoTracking/cargoApi/cargoTracking', param);
 
     console.log(response.status);
     console.log(JSON.stringify(response.data, null, 2));
