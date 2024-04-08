@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "2captcha-ts": "^2.3.3",
+    "axios": "^1.6.8"
+  }
+}
