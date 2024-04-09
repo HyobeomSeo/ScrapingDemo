@@ -28,8 +28,8 @@ async function runTest(){
     const rect = await page.evaluate(captchaImgSelector => {
         const element = document.querySelector(captchaImgSelector);
         if(element){
-            const {top, left, width, height} = element.getBoundingClientRect();
-            return {top, left, width, height};
+            const {x, y, width, height} = element.getBoundingClientRect();
+            return {x, y, width, height};
         }
         return null;
     }, captchaImgSelector);
@@ -41,8 +41,8 @@ async function runTest(){
         //path: 'captcha.png',
         encoding: 'base64',
         clip: {
-            x: rect.left,
-            y: rect.top,
+            x: rect.x,
+            y: rect.y,
             width: rect.width,
             height: rect.height
         }
