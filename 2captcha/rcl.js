@@ -60,6 +60,8 @@ https://eservice.rclgroup.com/CargoTracking/cargoApi/cargoTracking
 
     console.log(response.status);
     console.log(JSON.stringify(response.data, null, 2));
+
+    
 }
 
 
