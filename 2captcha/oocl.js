@@ -87,6 +87,8 @@ async function runTest() {
             
             console.log("gogogog scraping");
 
+            await sleep(5);
+
             await newPage.close();
         }
     });
@@ -99,6 +101,7 @@ async function runTest() {
 
         if(cnt < 5){
             const ieSearchNumber = await page.waitForSelector('::-p-xpath(//*[@id="SEARCH_NUMBER"])');
+            await ieSearchNumber.click({clickCount: 3});
             await ieSearchNumber.type('AAA'+ cnt);
             await sleep(1);
     
