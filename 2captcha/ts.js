@@ -18,7 +18,7 @@ async function runTest(){
     let page = (await browser.pages())[0];
     //const page = await browser.newPage();
 
-    await page.setViewport({ width: 1024, height: 768 });
+    await page.setViewport({ width: 1680, height: 1050 });
     //await page.setDefaultNavigationTimeout(1 * 60 * 1000);
 
 

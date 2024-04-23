@@ -17,7 +17,7 @@ async function runTest(){
     let page = (await browser.pages())[0];
     //const page = await browser.newPage();
 
-    await page.setViewport({ width: 1024, height: 768 });
+    await page.setViewport({ width: 1680, height: 1050 });
     //await page.setDefaultNavigationTimeout(1 * 60 * 1000);
 
 
@@ -53,7 +53,7 @@ async function runTest(){
     
     const solveRes = await solver.imageCaptcha({
         body: base64Image,
-        numeric: 3,
+        numeric: 1,
         min_len: 4,
         max_len: 4
     });
@@ -94,7 +94,14 @@ async function runTest(){
 
     
     const eInputBl = await page.waitForSelector('::-p-xpath(//*[@id="app"]/div/div[2]/div/div[1]/form/div/div[2]/div/div/div[1]/input)');
-    await eInputBl.type('BL');
+    await eInputBl.type('SITKBSH23186332');
+    
+
+    
+    const eButtonSearch = await page.waitForSelector('#app > div > div.index-container > div > div.search-container > form > div > div:nth-child(4) > button');
+    await page.evaluate(() => {
+        document.querySelector('#app > div > div.index-container > div > div.search-container > form > div > div:nth-child(4) > button').click();
+    });
     
 }
 
