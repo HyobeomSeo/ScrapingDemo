@@ -1,8 +1,10 @@
 {
   "dependencies": {
+    "@elastic/elasticsearch": "^8.14.0",
     "2captcha-ts": "^2.3.3",
     "axios": "^1.6.8",
     "cheerio": "^1.0.0-rc.12",
+    "proxy-chain": "^2.5.1",
     "puppeteer": "^22.6.3",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2"

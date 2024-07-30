@@ -1,5 +1,6 @@
 const Captcha = require("2captcha-ts");
 const solver = new Captcha.Solver("bd3d6a33966ff9f616fad8a5a302cfbc");
+//const solver = new Captcha.Solver("0c50359b8918d49aeb7cfeb2004c6e88");
 const axios = require('axios');
 
 const hbl = 'LCHCW23032882';

@@ -8,7 +8,7 @@ async function runTest(){
     let lanchParam = {
         headless: false,
        // ignoreDefaultArgs: ['--enable-automation'],
-       // args: ['--disable-blink-features=AutomationControlled'],
+       args: ['--window-size=1920,1080', '--disable-notifications'],
        // executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
     };
 
